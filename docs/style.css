@@ -61,54 +61,86 @@ h2 {
   padding: 0;
 }
 
-.projects li {
+.project-item {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  text-align: center;
-  gap: 10px;
-  margin: 20px 0;
-  padding: 16px;
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
+  align-items: center;
+  padding: 18px;
+  margin: 22px 0;
+  border-radius: 12px;
+  background-color: #1a1a1a30;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: default !important;
 }
 
-.projects li:hover {
+/* hover no card inteiro */
+.project-item:hover {
   background-color: #1a1a1a;
 }
 
-.projects a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
+/* Somente a imagem é link */
 .project-logo {
-  width: 48px;
-  height: 48px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
-  border-radius: 8px;
-  background-color: #fff;
-  padding: 4px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.project-text {
-  color: #00C9A7;
-  font-weight: 600;
-  font-size: 0.95rem;
+/* Hover da imagem */
+.project-logo:hover {
+  transform: scale(1.10);
+  box-shadow: 0 0 12px #1F6FEB;
+}
+
+/* ======== TÍTULO ======== */
+.project-title {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #00C9A7; /* Verde */
   transition: color 0.3s ease;
-  line-height: 1.4;
-  text-align: center;
 }
 
-.projects a:hover .project-text {
-  color: #FFD166;
+/* ======== DESCRIÇÃO ======== */
+.project-desc {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #00C9A7; /* Verde (como solicitado) */
+  line-height: 1.4;
+  transition: color 0.3s ease;
 }
+
+/* Título e descrição mudam de cor no hover */
+.project-item:hover .project-title,
+.project-item:hover .project-desc {
+  color: #FFD166; /* amarelo claro no hover */
+}
+
+/* ======== PARTICIPAÇÃO — SANFONA ======== */
+.project-participacao {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #ffffff; /* texto branco, como solicitado */
+  line-height: 1.4;
+
+  /* escondido inicialmente */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  transition: max-height 0.45s ease, opacity 0.4s ease;
+}
+
+/* aparece ao passar o mouse */
+.project-item:hover .project-participacao {
+  max-height: 200px;
+  opacity: 1;
+}
+
 
 /* =================== OUTRAS ATIVIDADES =================== */
 .other-works-section h2 {
@@ -254,4 +286,61 @@ h2 {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+/* =================== SANFONA (ACCORDION) =================== */
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px;
+  margin: 22px 0;
+  border-radius: 12px;
+  background-color: #1a1a1a30;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Escurece ao passar o mouse */
+.project-item:hover {
+  background-color: #1a1a1a;
+}
+
+/* Container do texto */
+.accordion {
+  width: 100%;
+  text-align: center;
+}
+
+/* Título sempre visível */
+.project-title {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #00C9A7;
+  transition: color 0.3s ease;
+}
+
+.project-title:hover {
+  color: #FFD166;
+}
+
+/* Conteúdo escondido inicialmente */
+.project-info {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #cfcfcf;
+
+  /* --- A mágica do accordion --- */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.45s ease, opacity 0.4s ease;
+}
+
+/* Ao passar o mouse no li, o bloco expande */
+.project-item:hover .project-info {
+  max-height: 200px; /* suficiente para o texto aparecer */
+  opacity: 1;
 }
