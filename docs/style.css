@@ -73,7 +73,6 @@ h2 {
   cursor: default !important;
 }
 
-/* hover no card inteiro */
 .project-item:hover {
   background-color: #1a1a1a;
 }
@@ -109,7 +108,7 @@ h2 {
 .project-desc {
   margin-top: 6px;
   font-size: 0.9rem;
-  color: #00C9A7; /* Verde (como solicitado) */
+  color: #00C9A7; 
   line-height: 1.4;
   transition: color 0.3s ease;
 }
@@ -117,14 +116,14 @@ h2 {
 /* Título e descrição mudam de cor no hover */
 .project-item:hover .project-title,
 .project-item:hover .project-desc {
-  color: #FFD166; /* amarelo claro no hover */
+  color: #FFD166; 
 }
 
 /* ======== PARTICIPAÇÃO — SANFONA ======== */
 .project-participacao {
   margin-top: 10px;
   font-size: 0.9rem;
-  color: #ffffff; /* texto branco, como solicitado */
+  color: #ffffff;
   line-height: 1.4;
 
   /* escondido inicialmente */
@@ -139,6 +138,20 @@ h2 {
 .project-item:hover .project-participacao {
   max-height: 200px;
   opacity: 1;
+}
+
+/* =================== SEÇÃO VAZIA (SEM PROJETOS) =================== */
+
+.empty-section {
+  background-color: #1a1a1a30;
+  padding: 16px;
+  border-radius: 12px;
+  margin: 12px 0 30px 0;
+  color: #CCCCCC;
+  font-size: 0.95rem;
+  text-align: center;
+  line-height: 1.5;
+  border-left: 3px solid #1F6FEB;
 }
 
 
@@ -301,7 +314,6 @@ h2 {
   cursor: pointer;
 }
 
-/* Escurece ao passar o mouse */
 .project-item:hover {
   background-color: #1a1a1a;
 }
@@ -332,15 +344,66 @@ h2 {
   line-height: 1.4;
   color: #cfcfcf;
 
-  /* --- A mágica do accordion --- */
   max-height: 0;
   overflow: hidden;
   opacity: 0;
   transition: max-height 0.45s ease, opacity 0.4s ease;
 }
 
-/* Ao passar o mouse no li, o bloco expande */
 .project-item:hover .project-info {
-  max-height: 200px; /* suficiente para o texto aparecer */
+  max-height: 200px; 
   opacity: 1;
 }
+
+/* =================== OUTRAS ATIVIDADES — SANFONA =================== */
+.other-item {
+  background-color: #1a1a1a30;
+  border-radius: 12px;
+  margin: 15px 0;
+  padding: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  cursor: default !important;
+}
+
+.other-item:hover {
+  background-color: #1a1a1a;
+}
+
+.other-title {
+  font-size: 1rem;
+  color: #00C9A7;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.other-title:hover {
+  color: #FFD166;
+}
+
+.other-content {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #CCCCCC;
+  line-height: 1.4;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease, opacity 0.4s ease;
+}
+
+.other-item:hover .other-content {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* Descrição geral da seção */
+.other-works-desc {
+  font-size: 0.95rem;
+  color: #CCCCCC;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  text-align: center;
+}
+

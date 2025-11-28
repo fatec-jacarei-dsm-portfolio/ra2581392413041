@@ -1,5 +1,5 @@
 # Portfólio de Projetos - Fatec Jacareí
-### Aluno: [Bruno Henrique Oliveira]
+### Aluno: Bruno Henrique Oliveira
 ### Curso: Desenvolvimento de Software Multiplataforma
 ### Turma: 1o.Semestre de 2024
  
